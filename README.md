@@ -19,7 +19,9 @@ after cloning run:
 
 ## Project purpose
 
-The aim of this project was to get more familiar with Solidity through Foundry and the many tools it comes with. Previously the only experience I had was with Ganache and Remix. This project got be to dig deeper into a CL local blockchain with Anvil, unit and integration testing of my contract, gas efficiency, oracles and of course Forge, which I found to be a great tool to use. This project was part of a tutorial series done by Patrick Collins, to whom I am grateful. 
+FundMe was a great second project after a basic introduction with a SimpleStorage contract. FundMe taught me how to use requirements, Oracles, unit and integration testing, gas efficiency, correct memory usage, and connecting to an Alchemy Sepolia node while maintaining a testable chain agnostic contract. 
+
+The aim of this project was also to get more familiar with Solidity through Foundry and the many tools it comes with. Previously the only experience I had was with Ganache and Remix. This project got be to dig deeper into a CL local blockchain with Anvil and of course Forge, which I found to be a great and powerful tool to use. This project was part of a tutorial series done by Patrick Collins, to whom I am grateful. 
 
 ### Build
 
