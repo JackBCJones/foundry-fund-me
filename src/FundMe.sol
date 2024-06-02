@@ -1,11 +1,9 @@
 // SPDX-License-Identifier: MIT
-// 1. Pragma
 pragma solidity ^0.8.19;
-// 2. Imports
 
 import {AggregatorV3Interface} from "lib/chainlink-brownie-contracts/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol";
 import {PriceConverter} from "./PriceConverter.sol";
-// 3. Interfaces, Libraries, Contracts
+
 error FundMe__NotOwner();
 
 contract FundMe {
@@ -34,9 +32,8 @@ contract FundMe {
     function fund() public payable {
         require(
             msg.value.getConversionRate(s_priceFeed) >= MINIMUM_USD,
-            "You need to spend more ETH!"
+            "Not enough Eth to fund."
         );
-        // require(PriceConverter.getConversionRate(msg.value) >= MINIMUM_USD, "You need to spend more ETH!");
         s_addressToAmountFunded[msg.sender] += msg.value;
         s_funders.push(msg.sender);
     }
@@ -52,7 +49,6 @@ contract FundMe {
         }
         s_funders = new address[](0);
         // Transfer vs call vs Send
-        // payable(msg.sender).transfer(address(this).balance);
         (bool success, ) = i_owner.call{value: address(this).balance}("");
         require(success);
     }
